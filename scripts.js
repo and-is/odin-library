@@ -12,6 +12,82 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function display() {
+  clearAll();
+  myLibrary.forEach((book, item) => {
+    const newB = document.createElement("div");
+    newB.classList.add("book");
+    const Bname = document.createElement("p");
+    Bname.innerText = book.title;
+    Bname.classList.add("name");
+    const Bauthor = document.createElement("p");
+    Bauthor.innerText = book.author;
+    Bauthor.classList.add("author");
+    const Bpages = document.createElement("p");
+    Bpages.innerText = book.pages;
+    Bpages.classList.add("pages");
+    const Bread = document.createElement("p");
+    Bread.innerText = book.read ? "Read it already" : "Haven't read it";
+    Bread.classList.add("read");
+    const Btndiv = document.createElement("div");
+    Btndiv.classList.add("btns");
+    const btn1 = document.createElement("button");
+    btn1.innerText = "Read";
+    btn1.classList.add("readd");
+    btn1.classList.add("btn");
+    btn1.setAttribute("id", item);
+    btn1.addEventListener("click", () => {
+      myLibrary[item].read = true;
+      display();
+    });
+    const btn2 = document.createElement("button");
+    btn2.innerText = "Unread";
+    btn2.classList.add("btn");
+    btn2.classList.add("unread");
+    btn2.setAttribute("id", item);
+    btn2.addEventListener("click", () => {
+      myLibrary[item].read = false;
+      display();
+    });
+    const removeBtn = document.createElement("button");
+    removeBtn.innerText = "Remove";
+    removeBtn.classList.add("add");
+    removeBtn.classList.add("remove");
+    btn2.setAttribute("id", item);
+    removeBtn.addEventListener("click", () => {
+      myLibrary.splice(item, 1);
+      display();
+    });
+
+    const books = document.querySelector(".cards");
+    Btndiv.appendChild(btn1);
+    Btndiv.appendChild(btn2);
+    newB.appendChild(Bname);
+    newB.appendChild(Bauthor);
+    newB.appendChild(Bpages);
+    newB.appendChild(Bread);
+    newB.appendChild(Btndiv);
+    newB.appendChild(removeBtn);
+    books.appendChild(newB);
+  });
+}
+
+function clearAll() {
+  const bookss = document.querySelector(".cards");
+  bookss.innerHTML = "";
+}
+
+const adding = document.querySelector(".add");
+adding.addEventListener("click", () => {});
+
+function displayForm() {}
+
+addBookToLibrary("Harry Potter", "JK Rowling", 300, true);
+addBookToLibrary("LOTR", "Tolkien", 500, false);
+addBookToLibrary("ASOIAF", "GRR Martin", 400, true);
+display();
+
+/*
+function display() {
   for (item in myLibrary) {
     console.log(
       `Book: ${myLibrary[item].title} \n Author: ${
@@ -22,3 +98,4 @@ function display() {
     );
   }
 }
+*/
