@@ -15,13 +15,22 @@
       <div class="cards"></div>
       <button class="add">Add Books</button>
     </div>
-    <!-- <form action="#" class="addBook">
-      <input type="text" name="name" id="name" />
-      <input type="text" name="author" id="author" />
-      <input type="number" name="pages" id="pages" />
-      <input type="checkbox" name="read" id="read" />
-      <input type="submit" value="Add" />
-    </form> -->
+
+    <dialog>
+      <form class="addBook">
+        <legend class="addDet">Enter book details</legend>
+        <label for="name">Title of the book: </label>
+        <input type="text" name="name" id="name" />
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author" />
+        <label for="pages">Number of pages: </label>
+        <input type="number" name="pages" id="pages" />
+        <label for="read">Have you read the book? </label>
+        <input type="checkbox" name="read" id="read" />
+        <button type="submit" class="btn">Add</button>
+      </form>
+    </dialog>
+
     <div class="footer">
       <p class="fot">Andis Paudel © TheOdinProject</p>
     </div>

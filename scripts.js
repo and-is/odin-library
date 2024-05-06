@@ -76,10 +76,24 @@ function clearAll() {
   bookss.innerHTML = "";
 }
 
+const dialog = document.querySelector("dialog");
 const adding = document.querySelector(".add");
-adding.addEventListener("click", () => {});
+adding.addEventListener("click", () => {
+  dialog.showModal();
+});
 
-function displayForm() {}
+const form = document.querySelector(".addBook");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  var name = document.querySelector("#name").value;
+  var author = document.querySelector("#author").value;
+  var pages = document.querySelector("#pages").value;
+  var read = document.querySelector("#read").value;
+  addBookToLibrary(name, author, pages, read);
+  dialog.close();
+  form.reset();
+  display();
+});
 
 addBookToLibrary("Harry Potter", "JK Rowling", 300, true);
 addBookToLibrary("LOTR", "Tolkien", 500, false);
