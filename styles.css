@@ -1,0 +1,74 @@
+body {
+  box-sizing: border-box;
+  background-color: antiquewhite;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+.header,
+.footer {
+  background-color: black;
+  color: antiquewhite;
+  text-align: center;
+  padding: 20px;
+}
+.lib {
+  font-size: xx-large;
+  font-weight: bold;
+}
+.book {
+  text-align: center;
+  border: 2px solid rgba(77, 2, 2);
+  border-radius: 7px;
+  background-color: rgb(77, 2, 2);
+  color: antiquewhite;
+  padding: 20px;
+}
+.cards {
+  padding: 50px;
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  font-weight: bold;
+}
+.btn {
+  background-color: antiquewhite;
+  color: brown;
+  font-weight: bold;
+  width: 80px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+.btn:hover {
+  background-color: rgb(35, 34, 34);
+  color: antiquewhite;
+  cursor: pointer;
+}
+.add {
+  margin-bottom: 20px;
+  background-color: black;
+  color: antiquewhite;
+  width: 100px;
+  padding: 10px;
+  font-weight: 900;
+  border-radius: 5px;
+  border: none;
+}
+.add:hover {
+  background-color: rgb(77, 2, 2);
+  color: white;
+  cursor: pointer;
+}
+.remove {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.remove:hover {
+  background-color: antiquewhite;
+  color: red;
+}
